@@ -3,6 +3,8 @@
 This is a an Ionic 3 starter template demonstrating a simple, responsive
 timepicker based on the Android TimePicker widget.
 
+![Screenshot](screenshot.png)
+
 ## Getting started
 
 `$ git clone https://github.com/syndesis/ionic-starter-timepicker`
