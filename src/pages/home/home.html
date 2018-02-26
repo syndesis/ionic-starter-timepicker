@@ -1,14 +1,24 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+        Ionic Time Picker Demo
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <form [formGroup]="timeForm">
+    <ion-list>
+        <ion-item>
+            <ion-label stacked>
+                <ion-icon name="clock" icon-start>
+                    Time
+                </ion-icon>
+            </ion-label>
+            <ion-input type="text"
+                       (click)="setTime()"
+                       [formControl]="timeForm.controls['time']"></ion-input>
+        </ion-item>
+    </ion-list>
+    </form>
 </ion-content>

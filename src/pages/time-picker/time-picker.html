@@ -1,0 +1,116 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Select Time</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>
+            <div text-center>
+                <span (click)="ampm = 'AM'" [ngClass]="{'selected-am-pm': ampm === 'AM'}">AM</span>
+                <span (click)="ampm = 'PM'" [ngClass]="{'selected-am-pm': ampm === 'PM'}">PM</span>
+            </div>
+            <div class="selected-time" text-center>
+                <span [ngClass]="{'active-time-unit': selecting === 'hour'}"
+                      (click)="selecting = 'hour'">{{ hour }}</span>
+                <span>:</span>
+                <span [ngClass]="{'active-time-unit': selecting === 'minute'}"
+                      (click)="selecting = 'minute'">{{ minute }}</span>
+            </div>
+        </ion-card-header>
+        <ion-card-content>
+            <div #hourClock class="clock hour-clock" *ngIf="selecting === 'hour'" (click)="tappedClock($event)">
+                <div class="tick-number">
+                    <div class="clock-number">12</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">1</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">2</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">3</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">4</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">5</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">6</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">7</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">8</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">9</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">10</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">11</div>
+                </div>
+                <div class="clock-hand" [ngStyle]="hourHandStyle"></div>
+            </div>
+            <div #minuteClock class="clock minute-clock" *ngIf="selecting === 'minute'" (click)="tappedClock($event)">
+                <div class="tick-number">
+                    <div class="clock-number">00</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">05</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">10</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">15</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">20</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">25</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">30</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">35</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">40</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">45</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">50</div>
+                </div>
+                <div class="tick-number">
+                    <div class="clock-number">55</div>
+                </div>
+                <div class="clock-hand" [ngStyle]="minuteHandStyle"></div>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button
+                    no-lines
+                    (click)="cancel()">Cancel</button>
+        </ion-buttons>
+        <ion-buttons right>
+            <button ion-button
+                    no-lines
+                    (click)="dismiss()">Done</button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>
